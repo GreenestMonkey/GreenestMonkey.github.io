@@ -46,8 +46,10 @@
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
-  width: 100%;
+  width: auto%;
   text-align: center;
+  background-color:black;
+  margin-left: 4px;
 }
 
 /* Number text (1/3 etc) */
@@ -82,6 +84,11 @@
 }
 
 .mySlides iframe{
+	width:100%;
+	height:20vh;
+}
+.mySlides video{
+	object-fit:cover;
 	width:100%;
 	height:20vh;
 }

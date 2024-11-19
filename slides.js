@@ -1,14 +1,20 @@
-let slideIndex = 0;
+let totSlides = document.getElementsByClassName("mySlides");
+let slideIndex = Math.floor(Math.random() * totSlides.length);
 autoShowSlides();
+let slideTimer = setTimeout(autoShowSlides, 30000);
 
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
+  clearTimeout(slideTimer);
+  slideTimer = setTimeout(autoShowSlides, 30000);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
+  clearTimeout(slideTimer);
+  slideTimer = setTimeout(autoShowSlides, 30000);
 }
 
 function showSlides(n) {
@@ -37,5 +43,5 @@ function autoShowSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(autoShowSlides, 6000); // Change image every 2 seconds
+  slideTimer = setTimeout(autoShowSlides, 30000); // Change image every 2 seconds
 }
